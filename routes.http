@@ -1,0 +1,4 @@
+# @name get-all-tasks
+GET http://localhost:3333/tasks
+
+###

@@ -14,7 +14,7 @@ model Task {
   priority               String
   responsible            String
   status                 String
-  creation_date          DateTime  @default(now())
+  creation_date          DateTime
   expected_delivery_date DateTime
   actual_delivery_date   DateTime?
   update_at              DateTime?
