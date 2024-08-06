@@ -11,5 +11,21 @@ Content-Type: application/json
   "priority": "alta",
   "responsible": "Anderson Paiva",
   "status": "em andamento",
-  "expected_delivery_date": "2024-08-07T20:00:00.981Z"
+  "creation_date": "Tue Aug 06 2024 14:39:41 GMT-0300 (Horário Padrão de Brasília)",
+  "expected_delivery_date": "Mon Aug 12 2024 14:39:41 GMT-0300 (Horário Padrão de Brasília)"
+}
+
+###
+
+# @name delete-tasks
+PUT http://localhost:3333/remover-tarefa
+Content-Type: application/json
+
+{
+  "ids": [
+      "bb108a24-6c79-4fb4-bfdf-d0495ad7bed1",
+      "d2538d92-b319-49a6-8ada-052002f7de9a",
+      "39110427-9283-458b-aae5-533608cbc507",
+      "547cc536-6067-4a90-81d7-1419812341a6"
+  ]
 }

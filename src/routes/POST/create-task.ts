@@ -9,13 +9,11 @@ export async function CreateTask(app: FastifyInstance){
       priority: z.enum(['alta', 'média', 'baixa']),
       responsible: z.string(),
       status: z.enum(['não iniciada', 'em andamento', 'para hoje', 'entregue']),
-      expected_delivery_date: z.string().refine(date => !isNaN(Date.parse(date)), {
-        message: "Formato de data inválido"
-      })
+      creation_date: z.string(),
+      expected_delivery_date: z.string()
     })
 
-    const {description, expected_delivery_date, priority, responsible, status} = taskShema.parse(req.body)
-
+    const {description, creation_date, expected_delivery_date, priority, responsible, status} = taskShema.parse(req.body)
     try{
       await prisma.task.create({
         data: {
@@ -23,8 +21,8 @@ export async function CreateTask(app: FastifyInstance){
           priority,
           responsible,
           status,
-          creation_date: new Date(),
-          expected_delivery_date: new Date(expected_delivery_date)
+          creation_date,
+          expected_delivery_date
         }
       })
       reply.code(201).send({

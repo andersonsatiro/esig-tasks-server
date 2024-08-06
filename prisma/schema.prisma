@@ -8,14 +8,14 @@ datasource db {
 }
 
 model Task {
-  id                     String    @id @default(uuid())
-  number                 Int       @default(autoincrement())
+  id                     String  @id @default(uuid())
+  number                 Int     @default(autoincrement())
   description            String
   priority               String
   responsible            String
   status                 String
-  creation_date          DateTime
-  expected_delivery_date DateTime
-  actual_delivery_date   DateTime?
-  update_at              DateTime?
+  creation_date          String
+  expected_delivery_date String
+  actual_delivery_date   String?
+  update_at              String?
 }
