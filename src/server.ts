@@ -7,7 +7,7 @@ import { DeleteTasks } from './routes/DELETE/delete-tasks'
 const app = fastify()
 
 app.register(cors, {
-  origin: 'http://localhost:4200',
+  origin: 'https://esig-tasks.vercel.app/',
   methods: 'GET,POST,PUT,DELETE',
 })
 
